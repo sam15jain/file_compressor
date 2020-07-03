@@ -1,0 +1,48 @@
+<!-- Author : Samyak Jain
+Created on : 30 June 2020 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>File Compressor</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<script src='heap_implementation.js' type="module"></script>
+	<script src='codec_implementation.js' type="module"></script>
+	<script src='script.js' type="module"></script>
+</head>
+
+<body>
+	<h1 id="heading">COMPRESS OR DE-COMPRESS YOUR FILE IN THREE EASY STEPS!! </h1>
+	<div class="bigdiv">
+		<h2 class="align">STEP 1: UPLOAD YOUR FILE</h2>
+		<div class="align">
+			<form method="post" enctype="multipart/form-data" class="input">
+				<input type="file" id="uploadFile" style=" background-color: rgb(182, 179, 179)">
+				&nbsp;
+				<input type="submit">
+			</form>
+			<!-- Upload File -->
+		</div>
+		<h2 class="align">STEP 2: SELECT ACTION</h2>
+		<div class="align">
+			<!-- &emsp;&emsp;&emsp;&emsp; -->
+			<button type="button" id="encode" style="background-color: rgb(50, 158, 50);" class="button">ENCODE</button>
+			&nbsp or &nbsp;
+			<!-- &emsp;&emsp;&emsp;&emsp; -->
+			<button type="button" id="decode" style="background-color: rgb(184, 11, 11);" class="button">DECODE</button>
+			<!-- Select Action -->
+		</div>
+		<h2 class="align">STEP 3: SIT BACK AND RELAX</h2>
+		<div class="align">Wait a moment</div>
+	</div>
+	<br>
+	<br>
+	<span class="text">Want to know more about the compression technique used by this tool? <a href="info.html"
+			class="links">Click Here!</a></span>
+
+</body>
+
+</html>

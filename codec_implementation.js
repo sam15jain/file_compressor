@@ -1,5 +1,9 @@
-// import { MinHeap } from './heap_implementation.js';
-// export { Codec };
+/* 
+	Author : Samyak Jain
+	Created on : 30 June 2020
+*/
+import { MinHeap } from './heap_implementation.js';
+export { Codec };
 class MinHeap {
     constructor() {
         this.heap_array = [];
@@ -96,7 +100,8 @@ class MinHeap {
 class Codec {
     // constructor() {
     //     this.codes = {};
-    // }    
+    // }   
+
     /// dfs
     getCodes(node, curr_code) {
         /// is leaf node
