@@ -16,12 +16,13 @@
     padding-left: 17%;
     padding-right: 12%;
     background-color: rgb(182, 179, 179);
+    font-size: medium;
     
 }
 .bigdiv{
-    margin-left: 15%;
-    margin-right: 15%;
-    border: rgb(0, 0, 0) solid 1px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: rgb(0, 0, 0) solid 2px;
     
     background-color: rgb(182, 179, 179) ;
 }
@@ -38,18 +39,46 @@
     background-color: rgb(2, 158, 158);
 }
 
-.input{
+.form{
     background-color: rgb(182, 179, 179) ;
     font-family: Arial, Helvetica, sans-serif;
+    /* font-size: x-small; */
     /* display: inline-block; */
+}
+.input{
+    font-size: x-small;
 }
 
 .button{
-    font-size: large;
+    font-size: small;
     font-weight: bold;
     color: black;
 }
-@media(min-width:985px){
+
+.text{
+    font-size: small;
+}
+@media(min-width:725px){
+    .button{
+        font-size: medium;
+    }
+    .bigdiv{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .align{
+        font-size: large;
+    }
+    .text{
+        font-size: medium;
+        margin-left: 7%;
+        margin-right: 5%;
+    }
+    .input{
+        font-size: small;
+    }
+}
+@media(min-width:1050px){
     .text{
         margin-left: 20%;
         margin-right: 15%;
@@ -59,13 +88,15 @@
         margin-right: 20%;
     }
     .button{
-        font-size: larger;
-        margin-left: 5%;
-        margin-right: 5%;
+        font-size: large;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
     }
     .align{
         padding-left:23% ;
         padding-right: 20%;
+        font-size: x-large;
     }
 }
+
 
