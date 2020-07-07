@@ -11,37 +11,47 @@ Created on : 30 June 2020 -->
 	<link rel='stylesheet' type='text/css' href='styles.css'>
 	<script src='heap_implementation.js' type="module"></script>
 	<script src='codec_implementation.js' type="module"></script>
-	<script src='script.js' type="module"></script>
+	<script src='script.js' type="text/javascript"></script>
 </head>
 
+<!-- <body onload="onloadfn();"> -->
 <body>
-	<h1 id="heading" >COMPRESS OR DE-COMPRESS YOUR FILE IN THREE EASY STEPS!! </h1>
+	<h1 id="heading">COMPRESS OR DE-COMPRESS YOUR FILE IN THREE EASY STEPS!! </h1>
 	<div class="bigdiv">
 		<h2 class="align">STEP 1: UPLOAD YOUR FILE</h2>
-		<div class="align">
-			<form method="post" enctype="multipart/form-data" class="form">
-				<input type="file" id="uploadFile" style=" background-color: rgb(182, 179, 179);" class="input">
-				
-				<input type="submit" class="input">
+		<div class="align" id="step1">
+			<img src="assets/text_file_icon1.png"  id="textImg">
+			<br>
+			<form method="post" enctype="multipart/form-data" class="form" id="fileform">
+				<input type="file" id="uploadfile" style=" background-color: rgb(182, 179, 179);" class="input">
+
+				<input type="submit" class="input" id="submitbtn">
 			</form>
+			<!-- <br> -->
+			<span id="text1">(.txt only)</span>
 			<!-- Upload File -->
 		</div>
-		<h2 class="align">STEP 2: SELECT ACTION</h2>
-		<div class="align">
+		<h2 class="align">STEP 2: SELECT &nbspACTION</h2>
+		<div class="align" id="step2">
 			<!-- &emsp;&emsp;&emsp;&emsp; -->
-			<button type="button" id="encode" style="background-color: rgb(50, 158, 50);" class="button">COMPRESS</button>
+			<img src="assets/options_icon2.png" id="optionsImg">
+			<br>
+			<button type="button" id="encode" class="button" >COMPRESS</button>
 			&nbsp or &nbsp;
 			<!-- &emsp;&emsp;&emsp;&emsp; -->
-			<button type="button" id="decode" style="background-color: rgb(184, 11, 11);" class="button">DE-COMPRESS</button>
+			<button type="button" id="decode" class="button" >DE-COMPRESS</button>
 			<!-- Select Action -->
 		</div>
-		<h2 class="align">STEP 3: SIT BACK AND RELAX</h2>
-		<div class="align">Wait a moment</div>
+		<h2 class="align" >STEP 3: SIT BACK AND RELAX</h2>
+		<div class="align" id="step3" style="padding-bottom: 1%;">
+			<img src="assets/wait_icon1.png" id="waitImg">
+			<!-- Wait a moment -->
+		</div>
 	</div>
 	<br>
 	<br>
 	<span class="text">Want to know more about the compression technique used by this tool? <a href="info.html"
-			class="links">Click Here!</a></span>
+			class="links" id="link1">Click Here!</a></span>
 
 </body>
 

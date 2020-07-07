@@ -12,9 +12,10 @@
     margin-right: 10%;
 }
 .align{
-    padding: 1.5%;
+    /* padding: 1.5%; */
     padding-left: 17%;
     padding-right: 12%;
+    padding-bottom: 0.1%;
     background-color: rgb(182, 179, 179);
     font-size: medium;
     
@@ -31,8 +32,8 @@
     color: rgb(11, 11, 251);
     background-color: rgb(189, 201, 206);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    /* font-weight: bold; */
-    font-size: larger;
+    /* font-weight:+ bold; */
+    font-size: large;
 }
 .links:hover{
     color: rgb(3, 3, 128);
@@ -43,22 +44,71 @@
     background-color: rgb(182, 179, 179) ;
     font-family: Arial, Helvetica, sans-serif;
     /* font-size: x-small; */
-    /* display: inline-block; */
+    display: inline-block;
 }
 .input{
     font-size: x-small;
 }
 
+#text1{
+    font-size: xx-small;
+    background-color: rgb(182, 179, 179) ;
+}
+
+#encode{
+    background-color: rgb(50, 158, 50);
+}
+#decode{
+    background-color: rgb(184, 11, 11);
+}
+#encode:disabled{
+    background-color: rgb(182, 179, 179);
+}
+#decode:disabled{
+    background-color: rgb(182, 179, 179);
+}
 .button{
     font-size: small;
     font-weight: bold;
     color: black;
 }
-
+.button:disabled{
+    color: rgb(56, 54, 54);
+}
 .text{
     font-size: small;
 }
-@media(min-width:725px){
+.text2{
+    background-color: rgb(182, 179, 179);
+    font-size: small;
+}
+#link1{
+    font-size: smaller;
+}
+#textImg{
+    width: 10%;
+    margin-left: 30%;
+    background-color: rgb(182, 179, 179);
+}
+
+#doneImg{
+    width: 12%;
+    margin-left: 29.5%;
+    background-color: rgb(182, 179, 179);
+}
+
+#optionsImg{
+    width: 14%;
+    margin-left: 29%;
+    background-color: rgb(182, 179, 179);
+}
+
+#waitImg{
+    width: 14%;
+    margin-left: 29%;
+    background-color: rgb(182, 179, 179);
+}
+@media(min-width:735px){
     .button{
         font-size: medium;
     }
@@ -74,18 +124,30 @@
         margin-left: 7%;
         margin-right: 5%;
     }
+    #text1{
+        font-size: x-small;
+    }
+    .text2{
+        font-size: medium;
+    }
     .input{
         font-size: small;
     }
+    #link1{
+        font-size: large;
+    }
 }
-@media(min-width:1050px){
+@media(min-width:1090px){
     .text{
         margin-left: 20%;
         margin-right: 15%;
     }
+    #text1{
+        font-size: small;
+    }
     .bigdiv{
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-left: 19%;
+        margin-right: 19%;
     }
     .button{
         font-size: large;
@@ -96,6 +158,9 @@
         padding-left:23% ;
         padding-right: 20%;
         font-size: x-large;
+    }
+    .text2{
+        font-size: large;
     }
 }
 
