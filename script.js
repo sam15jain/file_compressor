@@ -154,7 +154,7 @@ class Codec {
 		if (mp.size === 0) {
 			let final_string = "zer#";
 			alert("WARNING: You have uploaded an empty file!\nThe compressed file might be larger in size than the uncompressed file!");
-			let output_message = "Compression complete and file sent for download" + '\n' + "Compression Ratio : " + (data.length / final_string.length);
+			let output_message = "Compression complete and file sent for download. " + '\n' + "Compression Ratio : " + (data.length / final_string.length).toPrecision(6);
 			return [final_string, output_message];
 		}
 		if (mp.size === 1) {
@@ -164,7 +164,7 @@ class Codec {
 				value = v;
 			}
 			let final_string = "one" + '#' + key + '#' + value.toString();
-			let output_message = "Compression complete and file sent for download" + '\n' + "Compression Ratio : " + (data.length / final_string.length);
+			let output_message = "Compression complete and file sent for download. " + '\n' + "Compression Ratio : " + (data.length / final_string.length).toPrecision(6);
 			return [final_string, output_message];
 		}
 		for (let [key, value] of mp) {
@@ -208,7 +208,7 @@ class Codec {
 		let tree_string = this.make_string(huffman_tree);
 		let ts_length = tree_string.length;
 		let final_string = ts_length.toString() + '#' + padding_length.toString() + '#' + tree_string + encoded_data;
-		let output_message = "Compression complete and file sent for download" + '\n' + "Compression Ratio : " + (data.length / final_string.length);
+		let output_message = "Compression complete and file sent for download. " + '\n' + "Compression Ratio : " + (data.length / final_string.length).toPrecision(6);
 		return [final_string, output_message];
 	}
 
@@ -226,7 +226,7 @@ class Codec {
 		}
 		if (temp === "zer") {
 			let decoded_data = "";
-			let output_message = "Decompression complete and file sent for download";
+			let output_message = "Decompression complete and file sent for download.";
 			return [decoded_data, output_message];
 		}
 		if (temp === "one") {
@@ -244,7 +244,7 @@ class Codec {
 			for (let i = 0; i < str_len; i++) {
 				decoded_data += one_char;
 			}
-			let output_message = "Decompression complete and file sent for download";
+			let output_message = "Decompression complete and file sent for download.";
 			return [decoded_data, output_message];
 
 		}
@@ -302,7 +302,7 @@ class Codec {
 				node = huffman_tree;
 			}
 		}
-		let output_message = "Decompression complete and file sent for download";
+		let output_message = "Decompression complete and file sent for download.";
 		return [decoded_data, output_message];
 	}
 }
