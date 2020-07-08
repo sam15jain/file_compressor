@@ -2,7 +2,7 @@
 	Author : Samyak Jain
 	Created on : 30 June 2020
 */
-export { MinHeap }
+// export { MinHeap }
 class MinHeap {
     constructor() {
         this.heap_array = [];
@@ -15,7 +15,7 @@ class MinHeap {
     empty() {
         return (this.size() === 0);
     }
-
+ 
     push(value) {
         this.heap_array.push(value);
         this.up_heapify();

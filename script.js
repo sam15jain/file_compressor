@@ -151,7 +151,6 @@ class Codec {
                 mp.set(data[i], 1);
             }
         }
-        console.log("map size", mp.size);
         if (mp.size === 0) {
             let final_string = "zer#";
             let output_message = "Compression complete and file sent for download" + '\n' + "Compression Ratio : " + (data.length / final_string.length);
@@ -167,7 +166,6 @@ class Codec {
             let output_message = "Compression complete and file sent for download" + '\n' + "Compression Ratio : " + (data.length / final_string.length);
             return [final_string, output_message];
         }
-        console.log(mp)
         for (let [key, value] of mp) {
             this.heap.push([value, key]);
         }
@@ -176,7 +174,6 @@ class Codec {
         // mp.forEach(function (value, key) {
         //     console.log([value, key]);
         // })
-        console.log(this.heap.heap_array);
         while (this.heap.size() >= 2) {
             let min_node1 = this.heap.top();
             this.heap.pop();
@@ -207,12 +204,9 @@ class Codec {
             }
             encoded_data += String.fromCharCode(curr_num);
         }
-        console.log(encoded_data);
         let tree_string = this.make_string(huffman_tree);
-        console.log(tree_string);
         let ts_length = tree_string.length;
         let final_string = ts_length.toString() + '#' + padding_length.toString() + '#' + tree_string + encoded_data;
-        console.log(final_string);
         let output_message = "Compression complete and file sent for download" + '\n' + "Compression Ratio : " + (data.length / final_string.length);
         return [final_string, output_message];
     }
@@ -227,7 +221,6 @@ class Codec {
         if (temp === "zer") {
             let decoded_data = "";
             let output_message = "Decompression complete and file sent for download";
-            console.log(decoded_data);
             return [decoded_data, output_message];
         }
         if (temp === "one") {
@@ -245,14 +238,12 @@ class Codec {
             for (let i = 0; i < str_len; i++) {
                 decoded_data += one_char;
             }
-            console.log(decoded_data);
             let output_message = "Decompression complete and file sent for download";
             return [decoded_data, output_message];
 
         }
         data = data.slice(k + 1);
         let ts_length = parseInt(temp);
-        console.log("ts_length", ts_length);
         k = 0;
         temp = "";
         while (data[k] != '#') {
@@ -267,7 +258,6 @@ class Codec {
         }
         data = data.slice(k);
         let tree_string = temp;
-        console.log("tree_string", tree_string);
         temp = "";
         for (k = 0; k < data.length; k++) {
             temp += data[k];
@@ -306,7 +296,6 @@ class Codec {
                 node = huffman_tree;
             }
         }
-        console.log(decoded_data);
         let output_message = "Decompression complete and file sent for download";
         return [decoded_data, output_message];
     }
@@ -324,12 +313,7 @@ window.onload = function () {
 	step3 = document.getElementById("step3");
 	isSubmitted = false;
 	codecObj = new Codec();
-	submitBtn.onclick = function () {
-		// var filesList = uploadedFile.files;
-		// if(filesList.length>1){
-		// 	alert("Multiple files uploaded.\nPlease upload a single .txt file and try again!");
-		// 	return;
-		// }	
+	submitBtn.onclick = function () {	
 		var uploadedFile = uploadFile.files[0];
 		if(uploadedFile === undefined){
 			alert("No file uploaded.\nPlease upload a valid .txt file and try again!");
@@ -337,7 +321,6 @@ window.onload = function () {
 		}
 		let nameSplit = uploadedFile.name.split('.');
 		var extension = nameSplit[nameSplit.length - 1].toLowerCase();
-		console.log(extension);
 		if(extension != "txt"){
 			alert( "Invalid file type (." + extension + ") \nPlease upload a valid .txt file and try again!");
 			return;
@@ -348,7 +331,6 @@ window.onload = function () {
 	}
 	encodeBtn.onclick = function () {
 		console.log("encode onclick");
-		console.log(submitBtn);
 		var uploadedFile = uploadFile.files[0];
 		if(uploadedFile === undefined){
 			alert("No file uploaded.\nPlease upload a file and try again!");
