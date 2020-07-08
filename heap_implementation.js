@@ -58,7 +58,6 @@ class MinHeap {
         while (current_index < this.size()) {
             var child_index1 = (current_index * 2) + 1;
             var child_index2 = (current_index * 2) + 2;
-            // console.log("indexes",child_index1,child_index2,"heap_size",this.size());
             if (child_index1 >= this.size() && child_index2 >= this.size()) {
                 break;
             }
@@ -95,18 +94,3 @@ class MinHeap {
         }
     }
 }
-
-// var h1 = new MinHeap();
-// h1.push([2, 5]);
-// h1.push([4, 11]);
-// h1.push([2, 4]);
-// h1.push([0, 9]);
-// h1.push([1, -1]);
-// h1.push([-1, 5]);
-
-// console.log(h1.size());
-// while(h1.empty()==false){
-//     console.log(h1.top());
-//     h1.pop();
-// }
-// console.log(h1.heap_array);

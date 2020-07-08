@@ -8,14 +8,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 #heading {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 7%;
+    margin-right: 5%;
+    font-size: 130%;
 }
 .align{
     /* padding: 1.5%; */
     padding-left: 17%;
     padding-right: 12%;
-    padding-bottom: 0.1%;
+    padding-bottom: 0.05%;
     background-color: rgb(182, 179, 179);
     font-size: medium;
     
@@ -92,14 +93,14 @@
 }
 
 #doneImg{
-    width: 12%;
-    margin-left: 29.5%;
+    width: 9.5%;
+    margin-left: 30.5%;
     background-color: rgb(182, 179, 179);
 }
 
 #optionsImg{
     width: 14%;
-    margin-left: 29%;
+    margin-left: 28.5%;
     background-color: rgb(182, 179, 179);
 }
 
@@ -109,6 +110,11 @@
     background-color: rgb(182, 179, 179);
 }
 @media(min-width:735px){
+    #heading {
+        margin-left: 12%;
+        margin-right: 10%;
+        font-size: 150%;
+    }
     .button{
         font-size: medium;
     }
@@ -138,6 +144,11 @@
     }
 }
 @media(min-width:1090px){
+    #heading {
+        margin-left: 17%;
+        margin-right: 11%;
+        font-size: 170%;
+    }
     .text{
         margin-left: 20%;
         margin-right: 15%;
