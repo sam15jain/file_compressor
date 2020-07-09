@@ -12,15 +12,78 @@ Created on : 30 June 2020 -->
 <body>
     <a href="index.html" class="links"> &lt- Go Back </a>
     <h2>This tool uses Huffman Coding to compress data! </h2>
-    <h1>Huffman Coding:</h1>
     <ul>
-        <li>It is a popular technique used for <b>Lossless Data Compression</b>.</li>
-        <li>
-            A Huffman code is a particular type of optimal prefix code that is commonly used for lossless data compression. The process of finding or using such a code proceeds by means of Huffman coding, an algorithm developed by David A. Huffman.
+        <li><b>Huffman Coding</b>  is a popular technique used for <b>Lossless Data Compression</b>.</li>
+        <li><h3>Lossles Compression:</h3></li>
+        <li><b>Lossless compression</b> is a class of data compression algorithms that allows the original data to be
+            perfectly reconstructed from the compressed data. By contrast,<b>lossy compression</b> permits
+            reconstruction only of an approximation of the original data, though usually with greatly improved
+            compression rates (and therefore reduced media sizes).</li>
+        <li>Lossles Compression is preffered for text file compression, while Lossy Compression is generally preferred
+            for audio, video and image files.</li>
+        <li>File formats like <b>ZIP</b> use Lossless compression, while formats like <b>MP3</b> and <b>JPEG</b> use
+            Lossy compression</li>
+        <li><b>Data compression ratio</b> , also known as compression power, is a measurement of the relative reduction
+            in size of data representation produced by a data compression algorithm. It is typically expressed as the
+            division of uncompressed size by compressed size. Thus, a representation that compresses a file's storage
+            size from 10 MB to 2 MB has a compression ratio of 10/2 = 5
         </li>
         <li>
-            The output from Huffman's algorithm can be viewed as a variable-length code table for encoding a source symbol (such as a character in a file). The algorithm derives this table from the estimated probability or frequency of occurrence (weight) for each possible value of the source symbol. 
+            <h3>Huffman Code:</h3>
         </li>
+        <li>
+            A <b>Huffman code</b> is a particular type of optimal prefix code that is commonly used for lossless data
+            compression. The process of finding or using such a code proceeds by means of Huffman coding, an algorithm
+            developed by David A. Huffman.
+        </li>
+        <li>
+            The output from Huffman's algorithm can be viewed as a <b>variable-length code table</b> 
+            for encoding a source symbol (such as a character in a file). The algorithm derives this table from the
+            estimated probability or frequency of occurrence (weight) for each possible value of the source symbol.
+        </li>
+        <li><b>Prefix Codes</b>, means the codes (bit sequences) are assigned in such a way that the code assigned to
+            one character is not the prefix of code assigned to any other character. This is how Huffman Coding makes
+            sure that there is <b>no ambiguity</b> when decoding the generated bitstream.
+        </li>
+        <li><h3>Compression:</h3></li>
+        <li>There are mainly two major parts in Huffman Coding
+            <ol>
+                <li> Build a <b>Huffman Tree</b> from input characters.</li>
+                <li>Traverse the Huffman Tree and assign codes to characters.
+                </li>
+            </ol>
+        </li>
+        <li>
+            <b>Steps to build Huffman Tree</b>
+            <br>
+            Input is an <b>Array or Hashmap</b> of unique characters along with their frequency of occurrences and
+            output is Huffman
+            Tree.
+            <ol>
+                <li>Create a leaf node for each unique character and build <b>a Min Heap (or a priority queue)</b> of all leaf nodes </li>
+                <li>Extract two nodes with the minimum frequency from the min heap.</li>
+                <li>Create a new internal node with a frequency equal to the sum of the two nodes frequencies. Make the
+                    first extracted node as its left child and the other extracted node as its right child. Add this
+                    node to the min heap.</li>
+                <li>Repeat steps 2 and 3 until the heap contains only one node. The remaining node is the root node and
+                    the tree is complete.</li>
+            </ol>
+        </li>
+        <li>
+            <b>Steps to print codes from Huffman Tree:</b>
+            <br>
+            Traverse the tree formed starting from the root. Maintain an auxiliary array. While moving to the left
+            child, write 0 to the array. While moving to the right child, write 1 to the array. Print the array when a
+            leaf node is encountered.
+        </li>
+        <li><h3>De-compression:</h3></li>
+        <li>Generally speaking, the process of decompression is simply a matter of translating the stream of prefix codes to individual byte values, usually by traversing the Huffman tree node by node as each bit is read from the input stream (reaching a leaf node necessarily terminates the search for that particular byte value). </li>
+    </ul>
+    <h2>References:</h2>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">wikipedia/Huffman_coding</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Lossless_compression" target="_blank">wikipedia/Lossless_compression</a></li>
+        <li><a href="https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/" target="_blank">geeksforgeeks/huffman-coding</a></li>
     </ul>
 </body>
 

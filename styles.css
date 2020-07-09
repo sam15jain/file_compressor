@@ -7,6 +7,16 @@
     color: rgb(3, 5, 87);
     font-family: Arial, Helvetica, sans-serif;
 }
+h2{
+    /* color: black; */
+    font-style: italic;
+    /* text-decoration: underline;    */
+}
+h3{
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
 #heading {
     margin-left: 1%;
     margin-right: 1%;
