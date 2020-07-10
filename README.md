@@ -1,0 +1,35 @@
+<!-- Author : Samyak Jain
+	Created on : 30 June 2020 -->
+
+# Text File Compressor Web App
+
+* Uses Huffman Coding for Text Compression
+* Made with JAVASCRIPT , HTML and CSS
+* Website Link : https://sam15jain.github.io/file_compressor/
+
+## About
+* Performs Lossless compression and decompression of .txt files using Huffman Coding technique .
+* Each character is assigned a unique variable length binary code, instead of its 8-bit representation, with more frequent characters having smaller codes. A Huffman Tree is created and stored to generate and decode these codes.
+* Average compression ratio is ~1.8 to 2 which improves as file size increases.
+* The website is made responsive (with HTML and CSS ) and interactive (with JavaScript ) .
+* An Info page is added to give more information about Huffman coding.
+
+## User Interface
+
+* Breaks down the process into three steps:
+
+* Step 1 : Upload Your File
+
+* Step 2 : Select Action
+
+* Step 3 : Sit Back and Relax
+
+* Required file gets downloaded automatically when process is complete
+
+    * Compression - Compression Ratio is also displayed 
+
+    * De-compression
+
+* Additional Instructions and Warnings are provided if steps are not followed correctly
+
+* Link at the bottom of the page links to an Info page that provides more information about Huffman Coding
