@@ -38,7 +38,7 @@
  
     ![decompression](screenshots/decompressionss1.png)
 
-* Additional Instructions and Warnings are provided if steps are not followed correctly
+* Additional Instructions and Warnings are provided if the above steps are not followed correctly
 
 ![noFile](screenshots/noFiless.png)
 
