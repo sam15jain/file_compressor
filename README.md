@@ -44,6 +44,10 @@
 
 ![emptyFile](screenshots/emptyFiless.png)
 
+* Website is Responsive
+
+![responsive](screenshots/responsivess.png)
+
 * Link at the bottom of the page links to an Info page that provides more information about Huffman Coding
 
 ![info1](screenshots/infoss1.png)
