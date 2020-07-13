@@ -331,22 +331,9 @@ window.onload = function () {
 		if (extension != "txt") {
 			alert("Invalid file type (." + extension + ") \nPlease upload a valid .txt file and try again!");
 			return;
-		}
-		console.log(uploadedFile.size);
-		if(uploadedFile.size === 0){
-			alert("File submitted!\n\nWARNING: You have uploaded an empty file!\nThe compressed file might be larger in size than the uncompressed file (compression ratio might be smaller than one).\nBetter compression ratios are achieved for larger file sizes!");
-		}	
-		else if(uploadedFile.size <= 350){
-			alert("File submitted!\n\nWARNING: The uploaded file is very small in size (" + uploadedFile.size +" bytes) !\nThe compressed file might be larger in size than the uncompressed file (compression ratio might be smaller than one).\nBetter compression ratios are achieved for larger file sizes!");
-		}
-		else if(uploadedFile.size < 1000){
-			alert("File submitted!\n\nWARNING: The uploaded file is small in size (" + uploadedFile.size +" bytes) !\nThe compressed file's size might be larger than expected (compression ratio might be small).\nBetter compression ratios are achieved for larger file sizes!");
-		}	
-		else{
-			alert("File submitted!");
-		}
-		isSubmitted = true;
-		
+		}				
+		alert("File submitted!");
+		isSubmitted = true;		
 		onclickChanges("Done!! File uploaded !", step1);
 	}
 	encodeBtn.onclick = function () {
@@ -360,6 +347,16 @@ window.onload = function () {
 			alert("File not submitted.\nPlease click the submit button on the previous step\nto submit the file and try again!");
 			return;
 		}
+		console.log(uploadedFile.size);
+		if(uploadedFile.size === 0){
+			alert("WARNING: You have uploaded an empty file!\nThe compressed file might be larger in size than the uncompressed file (compression ratio might be smaller than one).\nBetter compression ratios are achieved for larger file sizes!");
+		}	
+		else if(uploadedFile.size <= 350){
+			alert("WARNING: The uploaded file is very small in size (" + uploadedFile.size +" bytes) !\nThe compressed file might be larger in size than the uncompressed file (compression ratio might be smaller than one).\nBetter compression ratios are achieved for larger file sizes!");
+		}
+		else if(uploadedFile.size < 1000){
+			alert("WARNING: The uploaded file is small in size (" + uploadedFile.size +" bytes) !\nThe compressed file's size might be larger than expected (compression ratio might be small).\nBetter compression ratios are achieved for larger file sizes!");
+		}	
 		onclickChanges("Done!! Your file will be Compressed", step2);
 		onclickChanges2("Compressing your file ...", "Compressed");
 		var fileReader = new FileReader();
