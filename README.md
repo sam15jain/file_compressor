@@ -40,7 +40,7 @@
 
 * Additional Instructions and Warnings are provided if the above steps are not followed correctly
 
-![noFile](screenshots/noFiless.png)
+![smallFile](screenshots/vsmallFiless.png)
 
 ![emptyFile](screenshots/emptyFiless.png)
 

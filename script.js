@@ -153,10 +153,11 @@ class Codec {
 		}
 		if (mp.size === 0) {
 			let final_string = "zer#";
-			alert("WARNING: You have uploaded an empty file!\nThe compressed file might be larger in size than the uncompressed file!");
+			
 			let output_message = "Compression complete and file sent for download. " + '\n' + "Compression Ratio : " + (data.length / final_string.length).toPrecision(6);
 			return [final_string, output_message];
 		}
+
 		if (mp.size === 1) {
 			let key, value;
 			for (let [k, v] of mp) {
@@ -331,8 +332,21 @@ window.onload = function () {
 			alert("Invalid file type (." + extension + ") \nPlease upload a valid .txt file and try again!");
 			return;
 		}
+		console.log(uploadedFile.size);
+		if(uploadedFile.size === 0){
+			alert("File submitted!\n\nWARNING: You have uploaded an empty file!\nThe compressed file might be larger in size than the uncompressed file (compression ratio might be smaller than one).\nBetter compression ratios are achieved for larger file sizes!");
+		}	
+		else if(uploadedFile.size <= 350){
+			alert("File submitted!\n\nWARNING: The uploaded file is very small in size (" + uploadedFile.size +" bytes) !\nThe compressed file might be larger in size than the uncompressed file (compression ratio might be smaller than one).\nBetter compression ratios are achieved for larger file sizes!");
+		}
+		else if(uploadedFile.size < 1000){
+			alert("File submitted!\n\nWARNING: The uploaded file is small in size (" + uploadedFile.size +" bytes) !\nThe compressed file's size might be larger than expected (compression ratio might be small).\nBetter compression ratios are achieved for larger file sizes!");
+		}	
+		else{
+			alert("File submitted!");
+		}
 		isSubmitted = true;
-		alert("File submitted");
+		
 		onclickChanges("Done!! File uploaded !", step1);
 	}
 	encodeBtn.onclick = function () {
