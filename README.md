@@ -40,9 +40,9 @@
 
 * Additional Instructions and Warnings are provided if the above steps are not followed correctly
 
-![smallFile](screenshots/vsmallFiless.png)
+![noFile](screenshots/noFiless.png)
 
-![emptyFile](screenshots/emptyFiless.png)
+![smallFile](screenshots/vsmallFiless.png)
 
 * Website is Responsive
 
