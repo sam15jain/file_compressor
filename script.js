@@ -3,24 +3,30 @@
 	Created on : 30 June 2020
 */
 // import { Codec } from "./codec_implementation.js";
+
+/// min heap implementation 
 class MinHeap {
 	constructor() {
 		this.heap_array = [];
 	}
 
+	// returns size of the min heap 
 	size() {
 		return this.heap_array.length;
 	}
 
+	// returns if the heap is empty 
 	empty() {
 		return (this.size() === 0);
 	}
-
+	
+	// insert a new value in the heap 
 	push(value) {
 		this.heap_array.push(value);
 		this.up_heapify();
 	}
 
+	/// updates heap by up heapifying
 	up_heapify() {
 		var current_index = this.size() - 1;
 		while (current_index > 0) {
@@ -39,10 +45,12 @@ class MinHeap {
 		}
 	}
 
+	/// returns the top element (smallest value element)
 	top() {
 		return this.heap_array[0];
 	}
 
+	/// delete the top element
 	pop() {
 		if (this.empty() == false) {
 			var last_index = this.size() - 1;
@@ -52,6 +60,7 @@ class MinHeap {
 		}
 	}
 
+	/// updates heap by down heapifying
 	down_heapify() {
 		var current_index = 0;
 		var current_element = this.heap_array[0];
@@ -95,6 +104,7 @@ class MinHeap {
 	}
 }
 
+/// coder decoder class
 class Codec {
 	// constructor() {
 	//     this.codes = {};
@@ -138,6 +148,7 @@ class Codec {
 		return node;
 	}
 
+	/// encoder function
 	encode(data) {
 		this.heap = new MinHeap();
 
@@ -213,6 +224,7 @@ class Codec {
 		return [final_string, output_message];
 	}
 
+	/// decoder function
 	decode(data) {
 		let k = 0;
 		let temp = "";
@@ -308,8 +320,11 @@ class Codec {
 	}
 }
 
+/// onload function
 window.onload = function () {
 	console.log("here onload");
+
+	/// accesing dom elements
 	decodeBtn = document.getElementById("decode");
 	encodeBtn = document.getElementById("encode");
 	fileForm = document.getElementById("fileform");
@@ -318,8 +333,12 @@ window.onload = function () {
 	step1 = document.getElementById("step1");
 	step2 = document.getElementById("step2");
 	step3 = document.getElementById("step3");
+	
+
 	isSubmitted = false;
 	codecObj = new Codec();
+
+	/// called when submit button is clicked
 	submitBtn.onclick = function () {
 		var uploadedFile = uploadFile.files[0];
 		if (uploadedFile === undefined) {
@@ -336,6 +355,8 @@ window.onload = function () {
 		isSubmitted = true;		
 		onclickChanges("Done!! File uploaded !", step1);
 	}
+
+	/// called when compress button is clicked
 	encodeBtn.onclick = function () {
 		console.log("encode onclick");
 		var uploadedFile = uploadFile.files[0];
@@ -368,6 +389,8 @@ window.onload = function () {
 		}
 		fileReader.readAsText(uploadedFile, "UTF-8");
 	}
+
+	// called when decompress button is clicked
 	decodeBtn.onclick = function () {
 		console.log("decode onclick");
 		var uploadedFile = uploadFile.files[0];
@@ -393,6 +416,7 @@ window.onload = function () {
 
 }
 
+/// changes dom when step 1 and is complete ( step 2 is running)
 function onclickChanges(firstMsg, step) {
 	step.innerHTML = "";
 	let img = document.createElement("img");
@@ -407,6 +431,7 @@ function onclickChanges(firstMsg, step) {
 	step.appendChild(msg);
 }
 
+/// changes dom when step 2 is complete (step 3 is running)
 function onclickChanges2(secMsg, word) {
 	decodeBtn.disabled = true;
 	encodeBtn.disabled = true;
@@ -423,6 +448,7 @@ function onclickChanges2(secMsg, word) {
 	step3.appendChild(msg3);
 }
 
+/// function to download file
 function myDownloadFile(fileName, text) {
 	let a = document.createElement('a');
 	a.href = "data:application/octet-stream," + encodeURIComponent(text);
@@ -430,6 +456,7 @@ function myDownloadFile(fileName, text) {
 	a.click();
 }
 
+/// changed dom when file is downloaded (step 3 complete)
 function ondownloadChanges(outputMsg) {
 	step3.innerHTML = "";
 	let img = document.createElement("img");
