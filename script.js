@@ -10,17 +10,17 @@ class MinHeap {
 		this.heap_array = [];
 	}
 
-	// returns size of the min heap 
+	/// returns size of the min heap 
 	size() {
 		return this.heap_array.length;
 	}
 
-	// returns if the heap is empty 
+	/// returns if the heap is empty 
 	empty() {
 		return (this.size() === 0);
 	}
 	
-	// insert a new value in the heap 
+	/// insert a new value in the heap 
 	push(value) {
 		this.heap_array.push(value);
 		this.up_heapify();

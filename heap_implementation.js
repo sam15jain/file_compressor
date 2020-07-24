@@ -8,19 +8,23 @@ class MinHeap {
         this.heap_array = [];
     }
 
+    /// returns size of the min heap 
     size() {
         return this.heap_array.length;
     }
 
+    /// returns if the heap is empty 
     empty() {
         return (this.size() === 0);
     }
  
+    /// insert a new value in the heap 
     push(value) {
         this.heap_array.push(value);
         this.up_heapify();
     }
 
+    /// updates heap by up heapifying
     up_heapify() {
         var current_index = this.size() - 1;
         while (current_index > 0) {
@@ -39,10 +43,12 @@ class MinHeap {
         }
     }
 
+    /// returns the top element (smallest value element)
     top() {
         return this.heap_array[0];
     }
 
+    /// delete the top element
     pop() {
         if (this.empty() == false) {
             var last_index = this.size() - 1;
@@ -52,6 +58,7 @@ class MinHeap {
         }
     }
 
+    /// updates heap by down heapifying
     down_heapify() {
         var current_index = 0;
         var current_element = this.heap_array[0];
