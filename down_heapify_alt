@@ -17,6 +17,6 @@
       let tmp = this.heap[largest];
       this.heap[largest] = this.heap[index];
       this.heap[index] = tmp;
-      this.sinkDown(largest)
+      this.down_heapify(largest)
   }
 }
